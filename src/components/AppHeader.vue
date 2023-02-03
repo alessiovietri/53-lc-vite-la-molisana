@@ -5,6 +5,34 @@ export default {
     name: 'AppHeader',
     components: {
         AppLogo
+    },
+    data() {
+        return {
+
+            links: [
+                {
+                    label: 'Home',
+                    url: '#',
+                    active: false
+                },
+                {
+                    label: 'Prodotti',
+                    url: '#',
+                    active: true
+                },
+                {
+                    label: 'Chi Siamo',
+                    url: '#',
+                    active: false
+                },
+                {
+                    label: 'Contatti',
+                    url: '#',
+                    active: false
+                }
+            ]
+
+        };
     }
 }
 </script>
@@ -18,24 +46,11 @@ export default {
         </div>
 
         <ul>
-            <li>
-                <a href="#">
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="#" class="active">
-                    Prodotti
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    Chi Siamo
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    Contatti
+            <li v-for="link in links">
+                <a :href="link.url" :class="{
+                    active: link.active == true
+                }">
+                    {{ link.label }}
                 </a>
             </li>
         </ul>
@@ -47,6 +62,10 @@ export default {
 <style lang="scss" scoped>
 div {
     text-align: center;
+}
+
+header {
+    padding-bottom: 50px;
 }
 
 ul {

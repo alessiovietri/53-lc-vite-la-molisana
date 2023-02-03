@@ -13,64 +13,68 @@ export default {
 
     <footer>
 
-        <div>
-            <AppLogo />
-        </div>
+        <div class="container">
 
-        <div>
-            <h3>
-                Pastificio
-            </h3>
-            <ul>
-                <li>
-                    <a href="#">
-                        Link 1
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Link 2
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Link 3
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Link 4
-                    </a>
-                </li>
-            </ul>
-        </div>
+            <div>
+                <AppLogo />
+            </div>
 
-        <div>
-            <h3>
-                Prodotti
-            </h3>
-            <ul>
-                <li>
-                    <a href="#">
-                        Link 1
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Link 2
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Link 3
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Link 4
-                    </a>
-                </li>
-            </ul>
+            <div>
+                <h3>
+                    Pastificio
+                </h3>
+                <ul>
+                    <li>
+                        <a href="#">
+                            Link 1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Link 2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Link 3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Link 4
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>
+                    Prodotti
+                </h3>
+                <ul>
+                    <li>
+                        <a href="#">
+                            Link 1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Link 2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Link 3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Link 4
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
 
     </footer>
@@ -79,10 +83,8 @@ export default {
 
 <style lang="scss" scoped>
 
-footer {
-    display: flex;
-    max-width: 1000px;
-    margin: 0 auto;
+.container {
+    @include container;
 
     > * {
         width: calc(100% / 3);
@@ -93,7 +95,7 @@ footer {
 
         h3 {
             text-transform: uppercase;
-            color: blue;
+            color: $main-blue;
             margin-bottom: 25px;
         }
 
@@ -110,6 +112,12 @@ footer {
             }
         }
     }
+}
+
+footer {
+    @include bg('../assets/img/footer-montagne-bottom.jpg', center bottom, 100% auto);
+
+    padding: 20px 0 150px;
 }
 
 </style>
